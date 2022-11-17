@@ -6,6 +6,5 @@ public class Main {
         ClassB classB = new ClassB(classC);
         ClassA classA = new ClassA(classB);
         classA.ActionA();
-
     }
 }

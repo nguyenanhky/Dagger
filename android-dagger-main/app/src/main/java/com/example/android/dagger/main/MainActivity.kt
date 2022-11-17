@@ -18,6 +18,7 @@ package com.example.android.dagger.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -26,10 +27,12 @@ import com.example.android.dagger.R
 import com.example.android.dagger.login.LoginActivity
 import com.example.android.dagger.registration.RegistrationActivity
 import com.example.android.dagger.settings.SettingsActivity
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mainViewModel: MainViewModel
+    val TAG  = "MainActivity"
 
     /**
      * If the User is not registered, RegistrationActivity will be launched,
@@ -40,6 +43,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val userManager = (application as MyApplication).userManager
+        Log.d(TAG, "isUserLoggedIn: "+userManager.isUserLoggedIn())
+        Log.d(TAG, "UserDataRepository: "+userManager.userDataRepository)
+        Log.d(TAG,"isUserRegistered: "+userManager.isUserRegistered())
         if (!userManager.isUserLoggedIn()) {
             if (!userManager.isUserRegistered()) {
                 startActivity(Intent(this, RegistrationActivity::class.java))

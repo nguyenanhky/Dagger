@@ -17,6 +17,7 @@
 package com.example.android.dagger.registration.enterdetails
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,12 +47,14 @@ class EnterDetailsFragment : Fragment() {
     private lateinit var errorTextView: TextView
     private lateinit var usernameEditText: EditText
     private lateinit var passwordEditText: EditText
+    val TAG = "EnterDetailsFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d(TAG, "onCreateView: ")
         val view = inflater.inflate(R.layout.fragment_enter_details, container, false)
 
         registrationViewModel = (activity as RegistrationActivity).registrationViewModel
