@@ -2,7 +2,7 @@ package kynvfhn.fsoft.sharingdagger.registration
 
 import kynvfhn.fsoft.sharingdagger.user.UserManager
 
-class RegisterViewModel(
+class RegistrationViewModel(
     val userManager: UserManager
 ) {
     private var username:String? = null
@@ -20,6 +20,6 @@ class RegisterViewModel(
         assert(username!=null)
         assert(password!=null)
         assert(acceptedTCs==true)
-
+        userManager.registerUser(username!!,password!!)
     }
 }

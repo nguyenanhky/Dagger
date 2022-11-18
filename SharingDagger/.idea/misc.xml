@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidProject/jetpack/dagger/SharingDagger/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/AndroidProject/jetpack/dagger/SharingDagger/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/AndroidProject/jetpack/dagger/SharingDagger/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/AndroidProject/jetpack/dagger/SharingDagger/app/src/main/res/layout/activity_registration.xml" value="0.22291666666666668" />
-        <entry key="..\:/AndroidProject/jetpack/dagger/SharingDagger/app/src/main/res/layout/fragment_enter_details.xml" value="0.1" />
+        <entry key="..\:/AndroidProject/jetpack/dagger/SharingDagger/app/src/main/res/layout/activity_settings.xml" value="0.19047619047619047" />
+        <entry key="..\:/AndroidProject/jetpack/dagger/SharingDagger/app/src/main/res/layout/fragment_enter_details.xml" value="0.25" />
+        <entry key="..\:/AndroidProject/jetpack/dagger/SharingDagger/app/src/main/res/layout/fragment_terms_and_conditions.xml" value="0.20466058763931105" />
       </map>
     </option>
   </component>

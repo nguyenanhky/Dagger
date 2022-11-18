@@ -44,7 +44,7 @@ class MainViewModelTest {
     @Test
     fun `Notifications text returns right text`() {
         whenever(userDataRepository.unreadNotifications).thenReturn(5)
-
         assertEquals("You have 5 unread notifications", viewModel.notificationsText)
     }
+
 }

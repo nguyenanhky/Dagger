@@ -32,8 +32,6 @@ import kotlin.math.log
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mainViewModel: MainViewModel
-    val TAG  = "MainActivity"
-
     /**
      * If the User is not registered, RegistrationActivity will be launched,
      * If the User is not logged in, LoginActivity will be launched,
@@ -43,9 +41,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val userManager = (application as MyApplication).userManager
-        Log.d(TAG, "isUserLoggedIn: "+userManager.isUserLoggedIn())
-        Log.d(TAG, "UserDataRepository: "+userManager.userDataRepository)
-        Log.d(TAG,"isUserRegistered: "+userManager.isUserRegistered())
         if (!userManager.isUserLoggedIn()) {
             if (!userManager.isUserRegistered()) {
                 startActivity(Intent(this, RegistrationActivity::class.java))
