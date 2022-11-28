@@ -3,6 +3,9 @@ package kynvfhn.fsoft.sharingdagger.settings
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelStore
 import kynvfhn.fsoft.sharingdagger.MyApplication
 import kynvfhn.fsoft.sharingdagger.R
 import kynvfhn.fsoft.sharingdagger.databinding.ActivitySettingsBinding
