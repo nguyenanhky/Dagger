@@ -10,6 +10,7 @@ import kynvfhn.fsoft.sharingdagger2_car.component.CarComponent;
 import kynvfhn.fsoft.sharingdagger2_car.component.DaggerCarComponent;
 import kynvfhn.fsoft.sharingdagger2_car.databinding.ActivityMainBinding;
 import kynvfhn.fsoft.sharingdagger2_car.model.Car;
+import kynvfhn.fsoft.sharingdagger2_car.model.DieselEngineModule;
 import kynvfhn.fsoft.sharingdagger2_car.model.Wheels;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     Car car;
 
-    @Inject
-    Wheels wheels;
     //private Car car;
 
     @Override
@@ -27,12 +26,21 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        CarComponent component = DaggerCarComponent.create();
+ //       CarComponent component = DaggerCarComponent.create();
 //        Car car =component.getCar();
 //        Wheels wheels =  component.getWheels();
 
+//        CarComponent component = DaggerCarComponent.builder()
+//                .dieselEngineModule(new DieselEngineModule(100))
+//                .build();
+
+
+        CarComponent component = DaggerCarComponent.builder()
+                .horsePower(150)
+                .engineCapacity(1400)
+                .build();
+
         component.inject(this);
         car.driver();
-        wheels.display();
     }
 }

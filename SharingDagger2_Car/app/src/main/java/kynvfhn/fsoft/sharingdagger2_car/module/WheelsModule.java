@@ -7,7 +7,7 @@ import kynvfhn.fsoft.sharingdagger2_car.model.Tire;
 import kynvfhn.fsoft.sharingdagger2_car.model.Wheels;
 
 @Module
-public class WheelsModule {
+public  class WheelsModule {
     @Provides
     Rim provideRim(){
         return new Rim();

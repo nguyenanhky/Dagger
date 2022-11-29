@@ -13,8 +13,4 @@ public class Wheels {
         this.rim = rim;
         this.tire = tire;
     }
-
-    public void display(){
-        Log.d("Car","nguyen anh ky");
-    }
 }

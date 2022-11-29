@@ -1,0 +1,42 @@
+Car: xe
+Engine : Động cơ
+  Block: khối
+  Cylinders : xi lanh
+  SparkPlugs: bugi
+( phân loại trong Engine(động cơ) thành PetrolEngine( động cơ chạy bằng xăng ) DieseEngine( động cơ chạy bằng điện )
+
+Wheels: bánh xe
+  Tires: lốp xe
+  rims: vành
+
+
+
+note
+Dependency injection cũng nhứ sự vất vả khi mà bài toán bắt đầu lớn hơn, Càng nhiều chỗ cần dùng thì
+càng nhiều lần phải từng bước tạo chúng, và cũng càng phải cần quản lý chặt chẽ phạm vi, sự tồn tại của chúng.
+
+Trong khi chúng ta chỉ làm việc chủ yếu với một instance thôi, nếu như có một công cụ nào đó, không những
+giúp chúng ta đỡ thủ công tạo những instance phụ thuộc cho nó, mà còn giúp chúng ta quản lý phạm vi sử dụng
+của chúng ta thì tuyệt với và đó là sự ra đời của Dagger
+
+* Dagger: tao tuyên bố rằng :
+mày chỉ cần cho tao biết chỗ nào mày sẽ cần những instance và cách tạo những instance đó thôi,
+mọi thứ cứ để tao lo"
+
+Dagger2 cho phép tạo mới component object bằng cú pháp:
+Dagger_<NameOfTheComponentInterface>. Sau đó ta có thể thể gọi method builder() sử dụng đẻ tạo
+ra các module bên trong component.
+Sau khi build(), ta có được 1 instance của interface component, từ lúc này ta sử dụng instance
+này để tạo ra các instance của các class và module khác.
+
+
+---
+@Binds annotation
+- sử dụng @Binds để báo cho Dagger biết cần sử dụng implement nào khi cung cấp 1 interface
+- @Binds phải là annotation abstract function. Kiểu trả về của abstract function là interface chúng ta muốn
+   cung cấp implement.
+
+- chúng ta sẽ tìm hiểu tại sao nên sử dụng @Binds thay vì @Provides để cung câp implement cho các interface
+  từ các module của chúng ta. Các method ràng buộc ngắn ngọn hơn vì chúng được khai báo là các method abstract
+  và chúng hiệu quả hơn vì Dagger không phải gọi chúng hoặc thậm chí khởi tạo module chứa của chúng
+
